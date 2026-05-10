@@ -56,6 +56,11 @@ in the file.
 
 ```
 project5-constellation-summary/
+├── Outputs/
+│   ├── plot1_constellation_pie.png
+│   ├── plot2_snr_distribution.png
+│   ├── plot3_pseudorange_distribution.png
+│   └── plot4_full_gnss_heatmap.png
 ├── project5_constellation_summary.ipynb   ← Main notebook
 ├── requirements.txt                        ← Python dependencies
 ├── LICENSE                                 ← MIT License
