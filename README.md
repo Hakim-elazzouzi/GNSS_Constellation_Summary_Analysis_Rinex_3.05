@@ -62,7 +62,7 @@ project5-constellation-summary/
 │   ├── plot3_pseudorange_distribution.png
 │   └── plot4_full_gnss_heatmap.png
 ├── src/
-│   ├──project5_constellation_summary__pie_chart_&_histograms.py        ← Main python
+│   ├── project5_constellation_summary__pie_chart_&_histograms.py        ← Main python
 ├── requirements.txt                                                    ← Python dependencies
 ├── LICENSE                                                             ← MIT License
 └── README.md                                                           ← This file
