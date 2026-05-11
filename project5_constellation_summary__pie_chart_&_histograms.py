@@ -45,10 +45,11 @@ combining four complementary views into one cohesive analysis.
  ----------------------
 # Step1: Install & Import Libraries
 # Step2: Load the RINEX File
-# Step3: Select Satellite and Extract Observables
-# Step4: Plot 1: Raw Measurements Overlaid
-# Step5: Plot 2: Noise Comparison (Epoch-to-Epoch Differences)
-# Step6: Plot 3: Code Minus Phase (C - Φ)
+# Step3: Build the Full Dataset per Constellation
+# Step4: Plot 1: Observation Share — Pie Chart
+# Step5: Plot 2: SNR Distribution — Histogram + Box Plot
+# Step6: Plot 3: Pseudorange Distribution — Histogram per Constellation
+# Step7: Plot 4: Plot 4: Full Multi-GNSS SNR Heatmap
 =============================================================================
 """
 
@@ -488,7 +489,7 @@ for prefix, d in data.items():
     print(f"  {d['name']:<8} {pr.mean():>10.3f} {pr.std():>10.3f} {pr.min():>10.3f} {pr.max():>10.3f}")
 
 # ────────────────────────────────────────────────────
-# Step 7 — Plot 4: Plot 4: Full Multi-GNSS SNR Heatmap
+# Step 7 — Plot 4: Plot 4: Full Multi-GNSS SNR Heatmap 
 # ────────────────────────────────────────────────────
 # Collect ordered list of all satellites by constellation
 
