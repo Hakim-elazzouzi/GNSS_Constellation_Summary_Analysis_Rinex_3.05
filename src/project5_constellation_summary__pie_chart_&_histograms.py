@@ -1,12 +1,6 @@
 =============================================================================
 🛰️ Project 5 — Constellation Summary: Pie Chart & Histograms
 =============================================================================
- Author   : Hakim El Azzouzi
- Degree   : MSc Global Navigation Satellite Systems
-            Mohammed First University, Oujda, Morocco
- Email    : elazzouzihakim10@gmail.com
- LinkedIn : https://linkedin.com/in/Hakim-El-Azzouzi
- Location : Luxembourg 🇱🇺
 -----------------------------------------------------------------------------
  Station  : AUCK00NZL  —  Auckland, New Zealand  (GeoNet / LINZ Network)
  File     : AUCK00NZL_R_20260010000_01D_30S_MO.rnx
@@ -17,7 +11,7 @@
 -----------------------------------------------------------------------------
  Description
  -----------
-## 📌 Overview
+## Overview
 
 After analysing individual satellites in Projects 1–4, this project steps back and asks:
 
@@ -28,10 +22,10 @@ combining four complementary views into one cohesive analysis.
 
 | Plot | What It Shows |
 |------|---------------|
-| 🥧 Pie + bar chart | Observation share and satellite count per constellation |
-| 📊 SNR histogram + box plot | Signal quality distribution, median, IQR, outliers |
-| 📈 Pseudorange histogram | Range measurement distribution — each system in its orbital band |
-| 🌡️ Full GNSS heatmap | Every satellite from every system over 24 hours |
+| Pie + bar chart | Observation share and satellite count per constellation |
+| SNR histogram + box plot | Signal quality distribution, median, IQR, outliers |
+| Pseudorange histogram | Range measurement distribution — each system in its orbital band |
+| Full GNSS heatmap | Every satellite from every system over 24 hours |
 -----------------------------------------------------------------------------
  **About the projects**
  ----------------------
@@ -95,7 +89,7 @@ print(f'   xarray version   : {xr.__version__}')
 # RINEX FILE PATH HERE
 obs_path = "/AUCK00NZL_R_20260010000_01D_30S_MO.rnx"  # ← change this path
 # Read the file header first (fast — no data loaded yet)
-print("📋 FILE HEADER")
+print(" FILE HEADER")
 print("=" * 60)
 header = gr.rinexheader(obs_path)
 
@@ -106,7 +100,7 @@ print()
 
 # Load all observation data (interval=30 means keep 30-sec rate)
 
-print("⏳ Loading observation data (this may take 1–2 minutes)...")
+print(" Loading observation data (this may take 1–2 minutes)...")
 obs = gr.load(obs_path, interval=30)
 print()
 print("✅ Data loaded!")
@@ -139,7 +133,7 @@ all_sv = obs.sv.values
 
 data = {}   # prefix → {'snr': array, 'pr': array, 'n_sats': int, 'n_obs': int}
 
-print("📡 Collecting observations per constellation...")
+print(" Collecting observations per constellation...")
 print()
 print(f"{'System':<10} {'Satellites':>10} {'SNR obs':>12} {'PR obs':>12} {'Mean SNR':>12} {'PR range':>22}")
 print("-" * 80)
@@ -290,7 +284,7 @@ plt.show()
 
 print('✅ Plot saved: plot1_constellation_pie.png')
 print()
-print('💡 Interpretation:')
+print(' Interpretation:')
 for name, count, n in zip(labels, sizes, n_sats):
     print(f'   • {name:<8}: {count:>8,} obs from {n} sats  ({count/total_obs*100:.1f}%)')
 
@@ -402,7 +396,7 @@ plt.show()
 
 print('✅ Plot saved: plot2_snr_distribution.png')
 print()
-print('📊 SNR Summary per constellation:')
+print(' SNR Summary per constellation:')
 print(f"{'System':<10} {'Median':>8} {'Mean':>8} {'Std':>8} {'Min':>8} {'Max':>8}")
 print("-" * 55)
 for prefix, d in data.items():
@@ -466,7 +460,7 @@ plt.show()
 
 print('✅ Plot saved: plot3_pseudorange_distribution.png')
 print()
-print('📊 Pseudorange summary per constellation:')
+print(' Pseudorange summary per constellation:')
 print(f"{'System':<10} {'Mean [Mm]':>10} {'Std [Mm]':>10} {'Min [Mm]':>10} {'Max [Mm]':>10}")
 print("-" * 55)
 for prefix, d in data.items():
@@ -609,7 +603,7 @@ plt.show()
 print(f'✅ Plot saved: plot4_full_gnss_heatmap.png')
 print(f'   Total satellites shown: {n_rows}')
 print()
-print('💡 Interpretation:')
+print(' Interpretation:')
 print('   • Each ROW = one satellite, grouped by constellation (separated by dashed lines)')
 print('   • GPS rows are blue, GLONASS red, Galileo green, BeiDou orange, QZSS purple')
 print('   • Black = satellite below horizon')
